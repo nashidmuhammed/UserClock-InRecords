@@ -16,7 +16,7 @@ WORKDIR /app
  
 COPY --from=builder /app/venv venv
 COPY main.py main.py
-COPY modesl.py models.py
+COPY models.py models.py
  
 ENV VIRTUAL_ENV=/app/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
