@@ -1,6 +1,6 @@
 from datetime import datetime
 from fastapi import FastAPI, HTTPException, Body
-from app.models import ClockInRecord, Item
+from models import ClockInRecord, Item
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 from typing import Optional
