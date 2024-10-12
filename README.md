@@ -27,15 +27,74 @@ Before you begin, ensure you have met the following requirements:
 
 ## API Endpoints
 <!-- Items CRUD APIs -->
-1.POST /items/
-2.GET /items/{id}
-3.GET /filter/items
-4.DELETE /items/{id}
-5.PUT /items/{id}
+1. POST /items/
+    - insert a new item into the database
+    - body: {
+            "name": "string",
+            "email": "string",
+            "item_name": "string",
+            "quantity": int,
+            "expiry_date": "datetime.datetime.now"
+            }
+
+2. GET /items/{id}
+    - return item from the database based item id
+    - body: {"id": "ObjectId"}
+
+3. GET /filter/items
+    - return item from the database filtered by email, expiry date, quantity.
+    - also return count of items grouped by email bsed on the filter data
+    - body: {
+            "email": "string",
+            "quantity": int,
+            "expiry_date": "datetime"
+            }
+    - filtered objects are optional
+
+4. DELETE /items/{id}
+    - delete item from the database based item id
+    - body: {"id": "ObjectId"}
+
+5. PUT /items/{id}
+    - update specific item from the database based item id
+    - body: {
+            "id": "ObjectId",
+            "name": "string",
+            "email": "string",
+            "item_name": "string",
+            "quantity": int,
+            "expiry_date": "datetime.datetime.now"
+            }
 
 <!-- User Clock-In Records APIs -->
-6.POST /clock-in
-7.GET /clock-in/{id}
-8.GET /filter/clock-in
-9.DELETE /clock-in/{id}
-10.PUT /clock-in/{id}
+6. POST /clock-in
+    - Insert a new record in the database 
+    - body: {
+            "email": "string",
+            "location": "string"
+            }
+
+7. GET /clock-in/{id}
+    - return record from the database based item id
+    - body: {"id": "ObjectId"}
+
+8. GET /filter/clock-in
+    - return record from the database filtered by email, location, insert_datetime.
+    - body: {
+            "email": "string",
+            "location": "string",
+            "insert_datetime": "datetime"
+            }
+    - filtered objects are optional
+
+9. DELETE /clock-in/{id}
+    - delete record from the database based record id
+    - body: {"id": "ObjectId"}
+
+10. PUT /clock-in/{id}
+    - update specific record from the database based record id
+    - body: {
+            "id": "ObjectId",
+            "email": "string",
+            "location": "string"
+            }

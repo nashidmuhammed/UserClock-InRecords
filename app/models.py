@@ -9,7 +9,6 @@ class Item(BaseModel):
     quantity: int
     expiry_date: datetime
 
-class UserClockInRecord(BaseModel):
-    user_id: str
-    clock_in: datetime
-    clock_out: Optional[datetime] = None
+class ClockInRecord(BaseModel):
+    email: str
+    location: str
